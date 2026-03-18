@@ -1,0 +1,246 @@
+FORKLIFT SAFETY AND OPERATION PROCEDURE
+Document No: HSP-331
+Revision: 3
+Effective Date: January 15, 2024
+Department: Health, Safety & Environment
+
+================================================================================
+1. PURPOSE
+================================================================================
+
+The purpose of this procedure is to establish minimum safety requirements for the
+operation, maintenance, and inspection of powered industrial trucks (forklifts)
+at all company facilities. This procedure applies to all employees, contractors,
+and temporary workers who operate or work near forklifts.
+
+================================================================================
+2. SCOPE
+================================================================================
+
+This procedure covers the following types of powered industrial trucks:
+- Counterbalanced forklifts (sit-down and stand-up)
+- Reach trucks
+- Order pickers
+- Pallet jacks (powered)
+- Rough terrain forklifts
+
+This procedure does not cover manual pallet jacks or hand trucks.
+
+================================================================================
+3. REFERENCES
+================================================================================
+
+- OSHA 29 CFR 1910.178 – Powered Industrial Trucks
+- ANSI/ITSDF B56.1 – Safety Standard for Low Lift and High Lift Trucks
+- CSA B335-15 – Safety Standard for Lift Trucks
+- Company Health & Safety Policy Manual
+
+================================================================================
+4. DEFINITIONS
+================================================================================
+
+4.1 Powered Industrial Truck (PIT): A mobile, power-propelled truck used to
+    carry, push, pull, lift, stack, or tier materials.
+
+4.2 Competent Person: An individual who has been trained and has demonstrated
+    proficiency in forklift operation.
+
+4.3 Designated Area: An area specifically assigned for forklift operations,
+    loading/unloading, and material storage.
+
+================================================================================
+5. RESPONSIBILITIES
+================================================================================
+
+5.1 Management:
+    - Ensure all operators are trained and certified
+    - Provide properly maintained forklifts
+    - Enforce compliance with this procedure
+
+5.2 Supervisors:
+    - Monitor daily operations for safe practices
+    - Conduct periodic safety observations
+    - Remove defective equipment from service
+
+5.3 Operators:
+    - Complete required training before operating any forklift
+    - Perform pre-shift inspections
+    - Report any defects or unsafe conditions immediately
+    - Operate forklifts in accordance with this procedure
+
+================================================================================
+6. TRAINING AND CERTIFICATION
+================================================================================
+
+6.1 Initial Training:
+    All new forklift operators must complete a training program that includes:
+    a) Classroom/online instruction covering:
+       - Truck-related topics (controls, instrumentation, steering, visibility)
+       - Operating environment (surface conditions, ramps, hazardous areas)
+       - Safe operating practices
+    b) Practical (hands-on) training under direct supervision
+    c) Evaluation of the operator's performance in the workplace
+
+6.2 Certification:
+    Upon successful completion of training, operators will receive a certification
+    card/license valid for three (3) years. Certification records shall be
+    maintained by the Safety Department.
+
+6.3 Refresher Training:
+    Refresher training and re-evaluation shall be conducted:
+    - Every three (3) years
+    - When an operator is observed operating unsafely
+    - After an accident or near-miss involving a forklift
+    - When assigned to a different type of forklift
+    - When workplace conditions change significantly
+
+6.4 Only trained and certified operators are permitted to operate forklifts.
+    Unauthorized operation of a forklift is grounds for disciplinary action.
+
+================================================================================
+7. PRE-OPERATIONAL INSPECTION
+================================================================================
+
+7.1 Operators must perform a pre-shift inspection before operating a forklift.
+    The inspection shall include, but is not limited to:
+    - Fluid levels (oil, coolant, hydraulic fluid)
+    - Tires and wheels (condition, inflation)
+    - Forks (cracks, straightness, locking pins)
+    - Mast and chains (condition, lubrication)
+    - Hydraulic system (leaks, operation)
+    - Brakes (service brake, parking brake)
+    - Steering
+    - Horn
+    - Lights (headlights, warning lights, strobe)
+    - Backup alarm
+    - Seat belt condition
+
+7.2 Any deficiencies found during the pre-shift inspection must be reported
+    to the supervisor. A forklift with safety-related defects shall be removed
+    from service and tagged out until repairs are completed.
+
+7.3 A written inspection checklist shall be completed and submitted to the
+    supervisor at the beginning of each shift.
+
+================================================================================
+8. SAFE OPERATING PROCEDURES
+================================================================================
+
+8.1 General Rules:
+    a) Always wear a seatbelt when operating a forklift equipped with one.
+    b) Keep arms and legs inside the operator compartment at all times.
+    c) Do not exceed the rated load capacity of the forklift.
+    d) Travel with forks lowered (approximately 4 inches from the ground).
+    e) Sound the horn at intersections, blind corners, and when approaching
+       pedestrians.
+    f) Maintain a safe following distance from other vehicles.
+    g) Yield to pedestrians at all times.
+
+8.2 Load Handling:
+    a) Center the load on the forks as close to the mast as possible.
+    b) Tilt the mast back to stabilize the load before traveling.
+    c) Do not raise or lower loads while traveling.
+    d) Ensure loads do not obstruct forward visibility; travel in reverse
+       if necessary.
+
+8.3 Speed and Travel:
+    a) Observe posted speed limits in all areas.
+    b) Slow down on wet or slippery surfaces.
+    c) Keep a safe distance from edges of ramps, platforms, and docks.
+    d) Do not drive on surfaces that cannot support the loaded weight.
+
+8.4 Prohibited Activities:
+    a) Do not allow riders on the forklift unless it is equipped with a
+       passenger seat.
+    b) Do not use the forklift to push or tow other vehicles without
+       proper attachments.
+    c) Do not raise people on the forks unless using an approved work platform
+       with appropriate fall protection.
+    d) Do not operate a forklift while under the influence of drugs or alcohol.
+    e) Do not use a cell phone while operating a forklift.
+
+================================================================================
+9. FUELING AND CHARGING
+================================================================================
+
+9.1 Propane-Powered Forklifts:
+    - Refuel in designated, well-ventilated areas
+    - No smoking within 25 feet of refueling area
+    - Inspect propane tanks for damage before connecting
+
+9.2 Electric Forklifts:
+    - Charge batteries in designated charging areas with adequate ventilation
+    - Wear appropriate PPE (face shield, rubber gloves) when handling batteries
+    - Keep open flames and sparks away from charging areas
+
+9.3 Diesel/Gasoline Forklifts:
+    - Shut off the engine before refueling
+    - No smoking during refueling
+
+================================================================================
+10. PARKING AND SHUTDOWN
+================================================================================
+
+10.1 When parking a forklift:
+     a) Park in designated parking areas only
+     b) Lower forks completely to the ground
+     c) Set the parking brake
+     d) Turn off the engine/power
+     e) Remove the key (if applicable)
+
+10.2 Never park a forklift on an incline unless wheels are blocked.
+
+================================================================================
+11. MAINTENANCE
+================================================================================
+
+11.1 Only qualified maintenance personnel shall perform repairs on forklifts.
+
+11.2 Forklifts shall receive scheduled preventive maintenance as recommended
+     by the manufacturer.
+
+11.3 Modifications or additions to forklifts shall not be made without prior
+     written approval from the manufacturer.
+
+================================================================================
+12. PEDESTRIAN SAFETY
+================================================================================
+
+12.1 Pedestrians must stay clear of forklift operating areas.
+
+12.2 Designated pedestrian walkways shall be clearly marked in areas where
+     forklifts operate.
+
+12.3 Operators must make eye contact with pedestrians before proceeding.
+
+================================================================================
+13. INCIDENT REPORTING
+================================================================================
+
+13.1 All forklift-related incidents, including near-misses, must be reported
+     to the supervisor immediately.
+
+13.2 Incidents shall be investigated and documented in accordance with the
+     company's incident investigation procedure.
+
+13.3 Corrective actions shall be implemented to prevent recurrence.
+
+================================================================================
+14. RECORDKEEPING
+================================================================================
+
+14.1 The following records shall be maintained:
+     - Operator training and certification records
+     - Pre-shift inspection checklists
+     - Maintenance records
+     - Incident reports
+
+14.2 Training records shall be retained for the duration of employment
+     plus three (3) years.
+
+================================================================================
+REVISION HISTORY
+================================================================================
+Rev 1 – March 2019: Initial release
+Rev 2 – June 2021: Updated training requirements, added seatbelt section
+Rev 3 – January 2024: Updated references, added pedestrian safety section

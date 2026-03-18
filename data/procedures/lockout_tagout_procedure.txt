@@ -1,0 +1,229 @@
+LOCKOUT / TAGOUT (LOTO) PROCEDURE
+Control of Hazardous Energy
+Document No: HSP-210
+Revision: 4
+Effective Date: March 1, 2024
+Department: Health, Safety & Environment
+
+================================================================================
+1. PURPOSE
+================================================================================
+
+This procedure establishes the minimum requirements for the lockout/tagout of
+energy isolating devices whenever maintenance or servicing is performed on
+machines and equipment. It is used to ensure that the machine or equipment is
+stopped, isolated from all potentially hazardous energy sources, and locked out
+before employees perform any servicing or maintenance.
+
+================================================================================
+2. SCOPE
+================================================================================
+
+This procedure applies to all employees, contractors, and temporary workers who
+service or maintain machines and equipment where the unexpected energization,
+start-up, or release of stored energy could cause injury. This includes:
+- Electrical energy
+- Mechanical energy
+- Hydraulic/pneumatic energy
+- Thermal energy
+- Chemical energy
+- Gravitational energy (stored/potential)
+
+This procedure does not apply to:
+- Cord-and-plug connected equipment where the plug is under exclusive control
+  of the employee performing the service
+- Hot tap operations on pressurized systems with documented procedures
+
+================================================================================
+3. REFERENCES
+================================================================================
+
+- OSHA 29 CFR 1910.147 – The Control of Hazardous Energy (Lockout/Tagout)
+- ANSI/ASSE Z244.1 – Control of Hazardous Energy
+- CSA Z460 – Control of Hazardous Energy
+- Company Health & Safety Policy Manual
+
+================================================================================
+4. DEFINITIONS
+================================================================================
+
+4.1 Affected Employee: An employee whose job requires them to operate or use a
+    machine or equipment on which servicing or maintenance is being performed
+    under lockout/tagout.
+
+4.2 Authorized Employee: A person who locks out or tags out machines or equipment
+    in order to perform servicing or maintenance on that machine or equipment.
+
+4.3 Energy Isolating Device: A mechanical device that physically prevents the
+    transmission or release of energy (e.g., circuit breaker, disconnect switch,
+    line valve, block).
+
+4.4 Lockout: The placement of a lockout device on an energy isolating device
+    to ensure that the equipment being controlled cannot be operated until the
+    lockout device is removed.
+
+4.5 Tagout: The placement of a tagout device on an energy isolating device
+    to indicate that the equipment shall not be operated until the tagout
+    device is removed.
+
+================================================================================
+5. RESPONSIBILITIES
+================================================================================
+
+5.1 Management:
+    - Provide lockout/tagout devices and hardware
+    - Ensure all authorized and affected employees are trained
+    - Enforce compliance with this procedure
+
+5.2 Authorized Employees:
+    - Follow all steps of the lockout/tagout procedure
+    - Apply personal locks and tags to energy isolating devices
+    - Verify energy isolation before beginning work
+
+5.3 Affected Employees:
+    - Do not attempt to restart or re-energize machines that are locked/tagged out
+    - Notify authorized employees of any concerns
+
+================================================================================
+6. TRAINING
+================================================================================
+
+6.1 All authorized employees shall receive training that covers:
+    - Recognition of applicable hazardous energy sources
+    - Type and magnitude of energy available in the workplace
+    - Methods and means necessary for energy isolation and control
+
+6.2 All affected employees shall be instructed in:
+    - The purpose and use of the lockout/tagout procedure
+    - The prohibition against attempting to restart locked/tagged out equipment
+
+6.3 Retraining shall be provided:
+    - When there is a change in job assignments, machines, or processes
+    - When a periodic inspection reveals inadequacies
+    - At least every two (2) years
+
+6.4 Training records shall include employee name, date of training, and
+    trainer identity.
+
+================================================================================
+7. LOCKOUT/TAGOUT PROCEDURE STEPS
+================================================================================
+
+7.1 PREPARATION:
+    a) Identify all energy sources associated with the machine/equipment
+    b) Identify the type and magnitude of each energy source
+    c) Identify the energy isolating device(s) for each source
+    d) Obtain the necessary lockout/tagout devices
+
+7.2 NOTIFICATION:
+    a) Notify all affected employees that the machine/equipment will be
+       shut down and locked/tagged out
+    b) Explain the reason for the lockout/tagout
+
+7.3 SHUTDOWN:
+    a) Shut down the machine/equipment using normal operating procedures
+    b) Ensure all operators are clear of the machine
+
+7.4 ISOLATION:
+    a) Operate the energy isolating device(s) to isolate the machine from
+       its energy source(s)
+    b) Dissipate or restrain any stored or residual energy
+       (e.g., capacitors, springs, elevated components, rotating flywheels,
+       hydraulic/pneumatic pressure, steam, hot water)
+
+7.5 LOCKOUT/TAGOUT APPLICATION:
+    a) Each authorized employee shall apply their personal lock and tag to
+       each energy isolating device
+    b) Tags must clearly identify the employee, date, and reason for lockout
+    c) Locks must be individually keyed – no master keys or duplicate keys
+
+7.6 VERIFICATION:
+    a) After applying locks/tags, verify that isolation is effective by
+       attempting to start the machine using normal controls
+    b) Return controls to the "off" or "neutral" position after verification
+    c) Test for zero energy state (e.g., voltage tester for electrical,
+       pressure gauge for hydraulic/pneumatic)
+
+7.7 PERFORM WORK:
+    a) Proceed with the servicing or maintenance activity
+
+================================================================================
+8. RESTORING EQUIPMENT TO SERVICE
+================================================================================
+
+8.1 Before removing locks/tags:
+    a) Inspect the work area to ensure all tools and materials are removed
+    b) Ensure all guards and safety devices are reinstalled
+    c) Verify that all employees are clear of the machine
+
+8.2 Remove locks and tags:
+    a) Only the authorized employee who applied the lock/tag may remove it
+    b) Notify affected employees that the machine will be re-energized
+
+8.3 Re-energize:
+    a) Re-energize the machine following normal startup procedures
+    b) Verify the machine operates correctly
+
+================================================================================
+9. GROUP LOCKOUT/TAGOUT
+================================================================================
+
+9.1 When multiple employees are working on the same machine:
+    a) A designated lead person shall coordinate the lockout/tagout
+    b) Each authorized employee shall apply their own personal lock
+    c) The primary lock shall be removed last after all personal locks
+       are removed
+
+================================================================================
+10. SHIFT CHANGE PROCEDURES
+================================================================================
+
+10.1 During shift changes, continuity of lockout/tagout protection shall be
+     maintained. The oncoming shift employee shall apply their lock before
+     the outgoing employee removes theirs.
+
+================================================================================
+11. PERIODIC INSPECTION
+================================================================================
+
+11.1 A periodic inspection of the energy control procedure shall be conducted
+     at least annually.
+
+11.2 The inspection shall be performed by an authorized employee who is not
+     using the energy control procedure being inspected.
+
+11.3 The inspection shall include a review of each authorized employee's
+     responsibilities under the procedure.
+
+11.4 Inspection results shall be documented.
+
+================================================================================
+12. LOCK REMOVAL BY OTHER THAN THE APPLYING EMPLOYEE
+================================================================================
+
+12.1 In the rare event that an authorized employee's lock must be removed by
+     someone other than the employee who applied it:
+     a) Verify that the employee who applied the lock is not at the facility
+     b) Make reasonable efforts to contact the employee
+     c) Ensure the employee knows the lock has been removed before they
+        resume work at the facility
+     d) The removal must be authorized by the facility manager
+
+================================================================================
+13. RECORDKEEPING
+================================================================================
+
+13.1 The following records shall be maintained:
+     - LOTO training records
+     - Periodic inspection records
+     - Equipment-specific energy control procedures
+
+13.2 Records shall be retained for a minimum of three (3) years.
+
+================================================================================
+REVISION HISTORY
+================================================================================
+Rev 1 – January 2018: Initial release
+Rev 2 – July 2019: Added shift change procedures
+Rev 3 – November 2021: Updated training frequency, added group LOTO section
+Rev 4 – March 2024: Updated references, added lock removal section

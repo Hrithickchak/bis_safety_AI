@@ -1,0 +1,458 @@
+{
+  "report_id": "RPT-6564AF37",
+  "generated_at": "2026-03-18T01:24:58.773380",
+  "procedure_title": "Hsp 331",
+  "procedure_source": "data/procedures/HSP 331.pdf",
+  "applicable_standards": [
+    "OSHA 29 CFR 1910.178",
+    "ANSI/ITSDF B56.1",
+    "CSA B335",
+    "OSHA 29 CFR 1910.28",
+    "OSHA 29 CFR 1926.501",
+    "ANSI/ASSP Z359.1",
+    "CSA Z259",
+    "OSHA 29 CFR 1910.38",
+    "OSHA 29 CFR 1910.39",
+    "OSHA 29 CFR 1910.157",
+    "NFPA 10",
+    "NFPA 101",
+    "OSHA 29 CFR 1910.67",
+    "OSHA 29 CFR 1926.453",
+    "ANSI/SAIA A92",
+    "CSA B354"
+  ],
+  "total_checks": 30,
+  "passed": 10,
+  "failed": 17,
+  "partial": 3,
+  "not_found": 0,
+  "compliance_score": 38.3,
+  "findings": [
+    {
+      "issue_id": "FORK-001",
+      "status": "PASS",
+      "severity": "INFO",
+      "category": "Incomplete Reference",
+      "requirement_summary": "Operator training and evaluation must be conducted by persons with the knowledge, training, and experience to evaluate competence.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(l)(2)(iii)"
+      ],
+      "document_quote": "3.2 Competent Trainer- A person who has the knowledge, training, and experience to train Powered Industrial Truck, Scissor Lift and Aerial Lift operators and evaluate competency.",
+      "regulation_quote": "All operator training and evaluation shall be conducted by persons who have the knowledge, training, and experience to train powered industrial truck operators and evaluate their competence.",
+      "description": "The procedure's definition of a Competent Trainer aligns exactly with the OSHA requirement for trainer qualifications.",
+      "recommendation": "None required."
+    },
+    {
+      "issue_id": "FORK-002",
+      "status": "PASS",
+      "severity": "INFO",
+      "category": "Incomplete Reference",
+      "requirement_summary": "Operator performance must be evaluated at least once every three years.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(l)(5)",
+        "CSA B335 Part 4"
+      ],
+      "document_quote": "3.3 Recertification... This occurs every 3 years at a minimum.",
+      "regulation_quote": "An evaluation of each powered industrial truck operator's performance shall be conducted at least once every three years.",
+      "description": "The procedure correctly identifies the three-year interval for recertification/evaluation as required by both OSHA and CSA standards.",
+      "recommendation": "None required."
+    },
+    {
+      "issue_id": "FORK-003",
+      "status": "FAIL",
+      "severity": "HIGH",
+      "category": "Missing Section",
+      "requirement_summary": "When ascending or descending grades in excess of 10 percent, loaded trucks shall be driven with the load upgrade.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(n)(7)(ii)"
+      ],
+      "document_quote": null,
+      "regulation_quote": "When ascending or descending grades in excess of 10 percent, loaded trucks shall be driven with the load upgrade.",
+      "description": "The procedure mentions that 'grades shall be ascended or descended slowly' in section 5.3.2.17 (by reference to traffic regulations), but it fails to explicitly state the critical safety requirement that loads must be kept upgrade on steep inclines.",
+      "recommendation": "Add a specific clause in section 5.3.1 regarding ramp/grade operation, specifying that the load must point upgrade on inclines greater than 10%."
+    },
+    {
+      "issue_id": "FORK-004",
+      "status": "PARTIAL",
+      "severity": "MEDIUM",
+      "category": "Vague Language",
+      "requirement_summary": "Maintain a safe distance of approximately three truck lengths from the truck ahead.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(n)(1)"
+      ],
+      "document_quote": "5.3.1.11 A safe distance shall be maintained from the edge of ramps or platforms...",
+      "regulation_quote": "A safe distance shall be maintained approximately three truck lengths from the truck ahead, and the truck shall be kept under control at all times.",
+      "description": "While the procedure mentions maintaining a safe distance from edges, it does not specify the 'three truck lengths' rule for following other vehicles as required by OSHA.",
+      "recommendation": "Update section 5.3.1 to include the specific requirement to maintain three truck lengths of distance between moving industrial trucks."
+    },
+    {
+      "issue_id": "FORK-005",
+      "status": "FAIL",
+      "severity": "HIGH",
+      "category": "Missing Section",
+      "requirement_summary": "The mast shall be tilted backward to stabilize the load; forward tilt is prohibited when elevated except to pick up or deposit a load.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(o)(6)",
+        "OSHA 29 CFR 1910.178(p)"
+      ],
+      "document_quote": null,
+      "regulation_quote": "the mast shall be carefully tilted backward to stabilize the load... An elevated load shall not be tilted forward except when the load is in a deposit position over a rack or stack.",
+      "description": "The procedure does not contain instructions regarding the proper use of mast tilt for load stabilization during travel or the prohibition of forward tilt while elevated.",
+      "recommendation": "Insert instructions in section 5.3.1 regarding mast tilt: tilt back for travel stabilization and restrict forward tilt to deposit/pickup only."
+    },
+    {
+      "issue_id": "FORK-006",
+      "status": "PASS",
+      "severity": "INFO",
+      "category": "Incomplete Reference",
+      "requirement_summary": "Brakes must be set and wheel blocks in place for trucks/trailers/railcars during loading/unloading.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(m)(7)",
+        "OSHA 29 CFR 1910.178(k)(1)"
+      ],
+      "document_quote": "5.3.1.12 Brakes shall be set and wheel blocks shall be in place to prevent movement of trucks, trailers or railroad cars while loading or unloading.",
+      "regulation_quote": "The brakes of highway trucks shall be set and wheel chocks placed under the rear wheels to prevent the trucks from rolling while they are boarded with powered industrial trucks.",
+      "description": "The procedure is fully compliant with the requirement to secure transport vehicles during loading operations.",
+      "recommendation": "None required."
+    },
+    {
+      "issue_id": "FORK-007",
+      "status": "FAIL",
+      "severity": "MEDIUM",
+      "category": "Missing Section",
+      "requirement_summary": "Operators must know where they can access operating manuals.",
+      "regulatory_reference": [
+        "CSA B335 Section 6.4",
+        "CSA B335 Section 6"
+      ],
+      "document_quote": "4.4.7 Reading and being familiar with the manual for the equipment being operated...",
+      "regulation_quote": "Operating manual- operators must know where they can access operating manuals.",
+      "description": "The procedure requires operators to be familiar with the manual but does not explicitly mandate that the manual be accessible on the equipment or in a known location, which is a CSA requirement.",
+      "recommendation": "Add a requirement that the manufacturer's operating manual must be maintained on the equipment (e.g., in the weather-resistant compartment) at all times."
+    },
+    {
+      "issue_id": "FORK-008",
+      "status": "PASS",
+      "severity": "INFO",
+      "category": "Incomplete Reference",
+      "requirement_summary": "Refresher training is required if an operator is involved in an accident or near miss.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(l)(4)(ii)(B)"
+      ],
+      "document_quote": "6.1.2.2.2 The operator has been involved in an accident or near miss incident.",
+      "regulation_quote": "Refresher training... shall be provided to the operator when: The operator has been involved in an accident or near-miss incident.",
+      "description": "The procedure correctly incorporates the OSHA triggers for refresher training following incidents.",
+      "recommendation": "None required."
+    },
+    {
+      "issue_id": "FORK-009",
+      "status": "FAIL",
+      "severity": "CRITICAL",
+      "category": "Missing Section",
+      "requirement_summary": "A load chart must be displayed in the operator's cab where the rated load varies with reach.",
+      "regulatory_reference": [
+        "CSA B335 Section 259(2)"
+      ],
+      "document_quote": null,
+      "regulation_quote": "A load chart shall be displayed in the operator's cab where the rated load varies with the reach of the equipment.",
+      "description": "For Telehandlers (Variable Reach Forklifts), a load chart is a mandatory safety device. The procedure mentions knowing the weight and boom angle (5.3.2.7) but does not mandate the presence or use of the physical load chart in the cab.",
+      "recommendation": "Add a requirement to section 5.3.2 stating that a legible load chart must be present in the cab and consulted for all lifts."
+    },
+    {
+      "issue_id": "FORK-010",
+      "status": "PARTIAL",
+      "severity": "LOW",
+      "category": "Vague Language",
+      "requirement_summary": "Cross railroad tracks diagonally wherever possible.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(n)(6)"
+      ],
+      "document_quote": "5.3.2.17 Observe all applicable traffic regulations.",
+      "regulation_quote": "Railroad tracks shall be crossed diagonally wherever possible.",
+      "description": "The procedure relies on a general statement to follow traffic regulations but does not explicitly state the requirement for diagonal crossing of tracks, which is a specific OSHA safety maneuver.",
+      "recommendation": "Explicitly include the requirement to cross railroad tracks diagonally in the 'Traveling' or 'Safe Operation' sections."
+    },
+    {
+      "issue_id": "FORK-011",
+      "status": "FAIL",
+      "severity": "MEDIUM",
+      "category": "Missing Section",
+      "requirement_summary": "Avoid running over loose objects on the roadway surface.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(n)(14)"
+      ],
+      "document_quote": null,
+      "regulation_quote": "Running over loose objects on the roadway surface shall be avoided.",
+      "description": "The procedure lacks a specific instruction regarding the avoidance of debris or loose objects, which can cause load shifts or tire damage.",
+      "recommendation": "Add a clause to the traveling section (5.3.1) regarding the avoidance of loose objects and debris on the path of travel."
+    },
+    {
+      "issue_id": "FORK-012",
+      "status": "PASS",
+      "severity": "INFO",
+      "category": "Incomplete Reference",
+      "requirement_summary": "Only loads within the rated capacity of the truck shall be handled.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(o)(2)"
+      ],
+      "document_quote": "5.3.1.16 Operators shall not load forklifts in excess of their rated load or capacity.",
+      "regulation_quote": "Only loads within the rated capacity of the truck shall be handled.",
+      "description": "The procedure is in full compliance with the capacity requirements of the OSHA standard.",
+      "recommendation": "None required."
+    },
+    {
+      "issue_id": "PIT-001",
+      "status": "PASS",
+      "severity": "INFO",
+      "category": "Incomplete Reference",
+      "requirement_summary": "Operator performance evaluation must be conducted at least once every three years.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(l)(4)(iii)"
+      ],
+      "document_quote": "Recertification \u2013 a Competent Trainer utilizing a checklist or assessment form, shall observe the employee operating the equipment... This occurs every 3 years at a minimum.",
+      "regulation_quote": "An evaluation of each powered industrial truck operator's performance shall be conducted at least once every three years.",
+      "description": "The procedure correctly identifies the 3-year interval for operator performance evaluation.",
+      "recommendation": "None required."
+    },
+    {
+      "issue_id": "PIT-002",
+      "status": "PASS",
+      "severity": "INFO",
+      "category": "Incomplete Reference",
+      "requirement_summary": "Defective or unsafe trucks must be removed from service until restored to safe condition.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(p)(1)"
+      ],
+      "document_quote": "All Mobile Equipment found in an unsafe condition shall be immediately removed from service and shall be tagged \u201cDo Not Operate\u201d.",
+      "regulation_quote": "If at any time a powered industrial truck is found to be in need of repair, defective, or in any way unsafe, the truck shall be taken out of service until it has been restored to safe operating condition.",
+      "description": "The procedure aligns with OSHA requirements for removing unsafe equipment from service.",
+      "recommendation": "None required."
+    },
+    {
+      "issue_id": "PIT-003",
+      "status": "FAIL",
+      "severity": "HIGH",
+      "category": "Missing Section",
+      "requirement_summary": "Fuel tanks shall not be filled while the engine is running.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(p)(2)"
+      ],
+      "document_quote": null,
+      "regulation_quote": "Fuel tanks shall not be filled while the engine is running. Spillage shall be avoided.",
+      "description": "The procedure lacks specific instructions regarding refueling safety, specifically the requirement to shut off engines during the process.",
+      "recommendation": "Add a section under 5.0 regarding refueling protocols, explicitly stating that engines must be turned off and spillage avoided."
+    },
+    {
+      "issue_id": "PIT-004",
+      "status": "FAIL",
+      "severity": "MEDIUM",
+      "category": "Missing Section",
+      "requirement_summary": "Trucks must maintain a safe distance of approximately three truck lengths from the truck ahead.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(n)(1)"
+      ],
+      "document_quote": "Obeying all traffic rules including speed limits, signals and warning signs",
+      "regulation_quote": "A safe distance shall be maintained approximately three truck lengths from the truck ahead, and the truck shall be kept under control at all times.",
+      "description": "While the procedure mentions obeying traffic rules, it fails to specify the mandatory 'three truck lengths' following distance required by OSHA.",
+      "recommendation": "Update section 5.3.1 to include the specific three-truck-length following distance requirement."
+    },
+    {
+      "issue_id": "PIT-005",
+      "status": "FAIL",
+      "severity": "MEDIUM",
+      "category": "Missing Section",
+      "requirement_summary": "Operators must look in the direction of travel and keep a clear view of the path.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(n)(6)"
+      ],
+      "document_quote": "The backup alarm should sound at all times when the unit is in reverse.",
+      "regulation_quote": "The driver shall be required to look in the direction of, and keep a clear view of the path of travel.",
+      "description": "The procedure does not explicitly state the requirement for the operator to look in the direction of travel, which is a critical safety behavior.",
+      "recommendation": "Add language to section 5.3.1 requiring operators to maintain a clear view and look in the direction of travel at all times."
+    },
+    {
+      "issue_id": "PIT-006",
+      "status": "PARTIAL",
+      "severity": "MEDIUM",
+      "category": "Vague Language",
+      "requirement_summary": "Loaded trucks must be driven with the load upgrade on grades in excess of 10 percent.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(n)(7)(i)"
+      ],
+      "document_quote": "if the Telehandler/Extendable Boom Forklift is on an incline, chock the wheels.",
+      "regulation_quote": "When ascending or descending grades in excess of 10 percent, loaded trucks shall be driven with the load upgrade.",
+      "description": "The procedure mentions inclines for chocking purposes but fails to provide the specific operational requirement for driving with the load upgrade on steep grades.",
+      "recommendation": "Include specific instructions for operating on grades, specifying that loads must be kept upgrade on inclines exceeding 10%."
+    },
+    {
+      "issue_id": "PIT-007",
+      "status": "FAIL",
+      "severity": "HIGH",
+      "category": "Missing Section",
+      "requirement_summary": "Flooring of trucks, trailers, and railroad cars must be checked for breaks and weakness before driving onto them.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(m)(7)"
+      ],
+      "document_quote": "Brakes shall be set and wheel blocks shall be in place to prevent movement of trucks, trailers or railroad cars while loading or unloading.",
+      "regulation_quote": "The flooring of trucks, trailers, and railroad cars shall be checked for breaks and weakness before they are driven onto.",
+      "description": "The procedure correctly identifies the need for wheel blocks but misses the mandatory inspection of the trailer/car floor integrity before entry.",
+      "recommendation": "Update section 5.3.1.12 to include a requirement to inspect the flooring of trailers and railcars for structural integrity before driving a forklift onto them."
+    },
+    {
+      "issue_id": "PIT-008",
+      "status": "PASS",
+      "severity": "INFO",
+      "category": "Incomplete Reference",
+      "requirement_summary": "Training must be conducted by persons with the knowledge, training, and experience to evaluate competence.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(l)(2)(iii)"
+      ],
+      "document_quote": "Competent Trainer- A person who has the knowledge, training, and experience to train Powered Industrial Truck, Scissor Lift and Aerial Lift operators and evaluate competency.",
+      "regulation_quote": "All operator training and evaluation shall be conducted by persons who have the knowledge, training, and experience to train powered industrial truck operators and evaluate their competence.",
+      "description": "The definition of 'Competent Trainer' in the procedure matches the OSHA requirement for trainer qualifications.",
+      "recommendation": "None required."
+    },
+    {
+      "issue_id": "PIT-009",
+      "status": "FAIL",
+      "severity": "MEDIUM",
+      "category": "Missing Section",
+      "requirement_summary": "Only stable or safely arranged loads shall be handled; caution for off-center loads.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(o)(1)"
+      ],
+      "document_quote": "Operators shall not load forklifts in excess of their rated load or capacity.",
+      "regulation_quote": "Only stable or safely arranged loads shall be handled. Caution shall be exercised when handling off-center loads which cannot be centered.",
+      "description": "The procedure addresses weight capacity but does not explicitly mention load stability or the specific caution required for off-center loads.",
+      "recommendation": "Add a requirement to section 5.3.1.16 regarding load stability and the handling of off-center loads."
+    },
+    {
+      "issue_id": "PIT-010",
+      "status": "FAIL",
+      "severity": "MEDIUM",
+      "category": "Missing Section",
+      "requirement_summary": "The mast shall be carefully tilted backward to stabilize the load.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(o)(5)"
+      ],
+      "document_quote": null,
+      "regulation_quote": "A load engaging means shall be placed under the load as far as possible; the mast shall be carefully tilted backward to stabilize the load.",
+      "description": "The procedure lacks the specific instruction to tilt the mast backward to stabilize the load during transport.",
+      "recommendation": "Add a requirement to the 'Safe Operation' section stating that the mast must be tilted back sufficiently to stabilize the load before moving."
+    },
+    {
+      "issue_id": "PIT-011",
+      "status": "FAIL",
+      "severity": "LOW",
+      "category": "Missing Section",
+      "requirement_summary": "Trucks equipped with attachments shall be operated as partially loaded trucks when not handling a load.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(o)(4)"
+      ],
+      "document_quote": "Only fork attachments designed for hoisting purposes may be utilized if approved by manufacturer.",
+      "regulation_quote": "Trucks equipped with attachments shall be operated as partially loaded trucks when not handling a load.",
+      "description": "The procedure mentions attachments but does not include the operational requirement to treat the truck as partially loaded when the attachment is empty (which affects center of gravity and stopping distance).",
+      "recommendation": "Add a note in section 5.3.1 regarding the handling characteristics of trucks with attachments."
+    },
+    {
+      "issue_id": "PIT-012",
+      "status": "FAIL",
+      "severity": "MEDIUM",
+      "category": "Missing Section",
+      "requirement_summary": "A load chart shall be displayed in the operator's cab where the rated load varies with reach.",
+      "regulatory_reference": [
+        "CSA Standard B335",
+        "Clause 31"
+      ],
+      "document_quote": "Know the weight of the load and the boom angle and length at the location furthest from the Telehandler/Extendable Boom Forklift before you pick up the load.",
+      "regulation_quote": "A load chart shall be displayed in the operator's cab where the rated load varies with the reach of the equipment.",
+      "description": "While the procedure tells the operator to 'know' the weight and angle, it does not explicitly mandate that the load chart be physically displayed/available in the cab as required by CSA B335.",
+      "recommendation": "Add a requirement to section 5.3.2 (Telehandlers) ensuring that a legible load chart is present in the cab at all times."
+    },
+    {
+      "issue_id": "PIT-013",
+      "status": "FAIL",
+      "severity": "MEDIUM",
+      "category": "Missing Section",
+      "requirement_summary": "Operators must not pass other trucks at intersections or blind spots.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(n)(3)"
+      ],
+      "document_quote": null,
+      "regulation_quote": "Other trucks traveling in the same direction at intersections, blind spots, or other dangerous locations shall not be passed.",
+      "description": "The procedure lacks a prohibition on passing other vehicles at dangerous locations.",
+      "recommendation": "Add a rule in Section 5.3.1 prohibiting passing at intersections, blind spots, or other dangerous locations."
+    },
+    {
+      "issue_id": "PIT-014",
+      "status": "FAIL",
+      "severity": "LOW",
+      "category": "Missing Section",
+      "requirement_summary": "Railroad tracks shall be crossed diagonally wherever possible.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(n)(6)"
+      ],
+      "document_quote": null,
+      "regulation_quote": "Railroad tracks shall be crossed diagonally wherever possible.",
+      "description": "The procedure does not provide guidance on the safe method for crossing railroad tracks.",
+      "recommendation": "Add an instruction to cross railroad tracks diagonally to Section 5.3.1."
+    },
+    {
+      "issue_id": "PIT-015",
+      "status": "PASS",
+      "severity": "INFO",
+      "category": "Incomplete Reference",
+      "requirement_summary": "Only loads within the rated capacity shall be handled.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(o)(2)"
+      ],
+      "document_quote": "Operators shall not load forklifts in excess of their rated load or capacity.",
+      "regulation_quote": "Only loads within the rated capacity of the truck shall be handled.",
+      "description": "The procedure correctly prohibits overloading equipment.",
+      "recommendation": "None required."
+    },
+    {
+      "issue_id": "FORK-013",
+      "status": "FAIL",
+      "severity": "MEDIUM",
+      "category": "Missing Section",
+      "requirement_summary": "Yield right of way to emergency vehicles.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(n)(2)"
+      ],
+      "document_quote": null,
+      "regulation_quote": "The right of way shall be yielded to ambulances, fire trucks, or other vehicles in emergency situations.",
+      "description": "The procedure mentions obeying traffic rules but does not explicitly state the requirement to yield to emergency vehicles.",
+      "recommendation": "Add a specific requirement to Section 5.3.1.6 regarding yielding right of way to emergency vehicles."
+    },
+    {
+      "issue_id": "FORK-014",
+      "status": "FAIL",
+      "severity": "HIGH",
+      "category": "Missing Section",
+      "requirement_summary": "A load chart must be displayed if rated load varies with reach.",
+      "regulatory_reference": [
+        "CSA B335 Section 259(2)"
+      ],
+      "document_quote": null,
+      "regulation_quote": "A load chart shall be displayed in the operator's cab where the rated load varies with the reach of the equipment.",
+      "description": "The procedure covers Telehandlers (Variable Reach Forklifts) in Section 5.3.2 but fails to mandate the presence of a load chart in the cab, which is critical for these types of lifts.",
+      "recommendation": "Add a requirement to Section 5.3.2 that a legible load chart must be displayed in the operator's cab for all variable reach equipment."
+    },
+    {
+      "issue_id": "FORK-015",
+      "status": "PASS",
+      "severity": "INFO",
+      "category": "Incomplete Reference",
+      "requirement_summary": "Remove unsafe trucks from service until repaired.",
+      "regulatory_reference": [
+        "OSHA 29 CFR 1910.178(p)(1)"
+      ],
+      "document_quote": "All Mobile Equipment found in an unsafe condition shall be immediately removed from service and shall be tagged \u201cDo Not Operate\u201d.",
+      "regulation_quote": "If at any time a powered industrial truck is found to be in need of repair, defective, or in any way unsafe, the truck shall be taken out of service until it has been restored to safe operating condition.",
+      "description": "The procedure's lockout/tagout and removal from service requirements are compliant.",
+      "recommendation": "None required."
+    }
+  ],
+  "summary": "**Executive Summary: Safety Compliance Audit of Procedure Hsp 331**\n\nThis report details the findings of a comprehensive safety compliance audit performed on Procedure Hsp 331, evaluated against OSHA 29 CFR 1910.178, ANSI/ITSDF B56.1, CSA B335, and related fall protection and fire safety standards. The procedure achieved an overall compliance score of **38.3%**, with 10 items passing, 17 failing, and 3 partially meeting the requirements. This score indicates significant regulatory gaps that require immediate remedial action to ensure operator safety and legal compliance.\n\nThe most critical deficiencies identified relate to equipment stability and load management, which present a high risk of tip-overs or falling loads. Specifically, the procedure fails to mandate the presence and use of load charts for telehandlers (Variable Reach Forklifts), a critical safety violation. Furthermore, the document lacks explicit instructions for operating on grades exceeding 10%\u2014where loads must remain upgrade\u2014and fails to define proper mast tilt protocols for stabilizing loads during travel. These omissions are classified as High to Critical severity because they directly impact the physical stability of the vehicle and the safety of the operator and bystanders.\n\nDespite these gaps, Procedure Hsp 331 demonstrates a solid foundation in administrative training requirements. The procedure is fully compliant regarding the qualifications of \"Competent Trainers\" and correctly identifies the three-year interval for operator recertification. Additionally, it accurately incorporates OSHA triggers for refresher training following an accident or near-miss and maintains high standards for securing transport vehicles (e.g., setting brakes and wheel blocks) during loading and unloading operations.\n\nTo bring Procedure Hsp 331 into full compliance, the following actions are recommended in order of priority:\n1.  **Immediate Update:** Amend section 5.3.2 to mandate that legible load charts be maintained in the cab of all telehandlers and consulted for every lift.\n2.  **Operational Safety:** Insert specific clauses in section 5.3.1 regarding ramp/grade operations (load upgrade for >10% inclines) and mast tilt requirements for load stabilization.\n3.  **Technical Specifics:** Update \"Safe Operation\" sections to include the \"three truck lengths\" following distance rule and the requirement to cross railroad tracks diagonally.\n4.  **Accessibility:** Add a requirement that manufacturer operating manuals must be stored in a weather-resistant compartment on the equipment at all times.\n\nThe current risk posture for Procedure Hsp 331 is **High**. While the administrative and training-cycle elements are well-defined, the procedure lacks the technical operational depth required by OSHA and CSA to prevent catastrophic equipment failure or operator error. Until the identified gaps in load handling and incline operations are addressed, the organization remains exposed to significant liability and increased risk of workplace incidents."
+}

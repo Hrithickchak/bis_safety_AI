@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance Report – Hsp 331</title>
+    <style>
+        :root {
+            --pass: #22c55e;
+            --fail: #ef4444;
+            --partial: #f59e0b;
+            --not-found: #6b7280;
+            --critical: #dc2626;
+            --high: #ea580c;
+            --medium: #d97706;
+            --low: #2563eb;
+            --info: #6b7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                         'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f8fafc;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a5f, #2563eb);
+            color: white;
+            padding: 2rem 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header .meta {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .score-card {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .score-card .card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .score-card .card .number {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .score-card .card .label {
+            font-size: 0.85rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .score-card .card.score .number {
+            color: #ef4444;
+        }
+
+        .score-card .card.pass .number { color: var(--pass); }
+        .score-card .card.fail .number { color: var(--fail); }
+        .score-card .card.partial .number { color: var(--partial); }
+        .score-card .card.notfound .number { color: var(--not-found); }
+
+        .summary-box {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            white-space: pre-line;
+        }
+
+        .summary-box h2 {
+            margin-bottom: 0.75rem;
+            color: #1e3a5f;
+        }
+
+        .findings {
+            margin-bottom: 2rem;
+        }
+
+        .findings h2 {
+            margin-bottom: 1rem;
+            color: #1e3a5f;
+        }
+
+        .finding {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--not-found);
+        }
+
+        .finding.status-pass { border-left-color: var(--pass); }
+        .finding.status-fail { border-left-color: var(--fail); }
+        .finding.status-partial { border-left-color: var(--partial); }
+
+        .finding-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .finding-header h3 {
+            font-size: 1.05rem;
+        }
+
+        .badges {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.65rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-pass { background: #dcfce7; color: #166534; }
+        .badge-fail { background: #fef2f2; color: #991b1b; }
+        .badge-partial { background: #fffbeb; color: #92400e; }
+        .badge-not-found { background: #f3f4f6; color: #374151; }
+
+        .badge-critical { background: #fef2f2; color: #991b1b; }
+        .badge-high { background: #fff7ed; color: #9a3412; }
+        .badge-medium { background: #fffbeb; color: #92400e; }
+        .badge-low { background: #eff6ff; color: #1e40af; }
+        .badge-info { background: #f3f4f6; color: #374151; }
+
+        .finding-body p {
+            margin-bottom: 0.5rem;
+        }
+
+        .quote {
+            background: #f1f5f9;
+            border-left: 3px solid #94a3b8;
+            padding: 0.75rem 1rem;
+            margin: 0.5rem 0;
+            font-style: italic;
+            font-size: 0.93rem;
+            color: #475569;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .recommendation {
+            background: #eff6ff;
+            border-left: 3px solid #3b82f6;
+            padding: 0.75rem 1rem;
+            margin: 0.5rem 0;
+            font-size: 0.93rem;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .reg-refs {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+
+        footer {
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.85rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Safety Compliance Audit Report</h1>
+        <div class="meta">
+            <strong>Procedure:</strong> Hsp 331<br>
+            <strong>Source:</strong> data/procedures/HSP 331.pdf<br>
+            <strong>Standards:</strong> OSHA 29 CFR 1910.178, ANSI/ITSDF B56.1, CSA B335, OSHA 29 CFR 1910.28, OSHA 29 CFR 1926.501, ANSI/ASSP Z359.1, CSA Z259, OSHA 29 CFR 1910.38, OSHA 29 CFR 1910.39, OSHA 29 CFR 1910.157, NFPA 10, NFPA 101, OSHA 29 CFR 1910.67, OSHA 29 CFR 1926.453, ANSI/SAIA A92, CSA B354<br>
+            <strong>Generated:</strong> 2026-03-18 01:24:58<br>
+            <strong>Report ID:</strong> RPT-6564AF37
+        </div>
+    </header>
+
+    <div class="score-card">
+        <div class="card score">
+            <div class="number">38.3%</div>
+            <div class="label">Compliance Score</div>
+        </div>
+        <div class="card pass">
+            <div class="number">10</div>
+            <div class="label">Passed</div>
+        </div>
+        <div class="card fail">
+            <div class="number">17</div>
+            <div class="label">Failed</div>
+        </div>
+        <div class="card partial">
+            <div class="number">3</div>
+            <div class="label">Partial</div>
+        </div>
+        <div class="card notfound">
+            <div class="number">0</div>
+            <div class="label">Not Found</div>
+        </div>
+    </div>
+
+    <div class="summary-box">
+        <h2>Executive Summary</h2>
+        <p>**Executive Summary: Safety Compliance Audit of Procedure Hsp 331**
+
+This report details the findings of a comprehensive safety compliance audit performed on Procedure Hsp 331, evaluated against OSHA 29 CFR 1910.178, ANSI/ITSDF B56.1, CSA B335, and related fall protection and fire safety standards. The procedure achieved an overall compliance score of **38.3%**, with 10 items passing, 17 failing, and 3 partially meeting the requirements. This score indicates significant regulatory gaps that require immediate remedial action to ensure operator safety and legal compliance.
+
+The most critical deficiencies identified relate to equipment stability and load management, which present a high risk of tip-overs or falling loads. Specifically, the procedure fails to mandate the presence and use of load charts for telehandlers (Variable Reach Forklifts), a critical safety violation. Furthermore, the document lacks explicit instructions for operating on grades exceeding 10%—where loads must remain upgrade—and fails to define proper mast tilt protocols for stabilizing loads during travel. These omissions are classified as High to Critical severity because they directly impact the physical stability of the vehicle and the safety of the operator and bystanders.
+
+Despite these gaps, Procedure Hsp 331 demonstrates a solid foundation in administrative training requirements. The procedure is fully compliant regarding the qualifications of "Competent Trainers" and correctly identifies the three-year interval for operator recertification. Additionally, it accurately incorporates OSHA triggers for refresher training following an accident or near-miss and maintains high standards for securing transport vehicles (e.g., setting brakes and wheel blocks) during loading and unloading operations.
+
+To bring Procedure Hsp 331 into full compliance, the following actions are recommended in order of priority:
+1.  **Immediate Update:** Amend section 5.3.2 to mandate that legible load charts be maintained in the cab of all telehandlers and consulted for every lift.
+2.  **Operational Safety:** Insert specific clauses in section 5.3.1 regarding ramp/grade operations (load upgrade for >10% inclines) and mast tilt requirements for load stabilization.
+3.  **Technical Specifics:** Update "Safe Operation" sections to include the "three truck lengths" following distance rule and the requirement to cross railroad tracks diagonally.
+4.  **Accessibility:** Add a requirement that manufacturer operating manuals must be stored in a weather-resistant compartment on the equipment at all times.
+
+The current risk posture for Procedure Hsp 331 is **High**. While the administrative and training-cycle elements are well-defined, the procedure lacks the technical operational depth required by OSHA and CSA to prevent catastrophic equipment failure or operator error. Until the identified gaps in load handling and incline operations are addressed, the organization remains exposed to significant liability and increased risk of workplace incidents.</p>
+    </div>
+
+    <div class="findings">
+        <h2>Detailed Findings (30 items)</h2>
+        
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>FORK-009: A load chart must be displayed in the operator's cab where the rated load varies with reach.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-critical">CRITICAL</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>For Telehandlers (Variable Reach Forklifts), a load chart is a mandatory safety device. The procedure mentions knowing the weight and boom angle (5.3.2.7) but does not mandate the presence or use of the physical load chart in the cab.</p>
+        
+        <div class="quote"><strong>Regulation states:</strong> "A load chart shall be displayed in the operator's cab where the rated load varies with the reach of the equipment."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Add a requirement to section 5.3.2 stating that a legible load chart must be present in the cab and consulted for all lifts.</div>
+        <div class="reg-refs">📖 CSA B335 Section 259(2)</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>FORK-003: When ascending or descending grades in excess of 10 percent, loaded trucks shall be driven with the load upgrade.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-high">HIGH</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure mentions that 'grades shall be ascended or descended slowly' in section 5.3.2.17 (by reference to traffic regulations), but it fails to explicitly state the critical safety requirement that loads must be kept upgrade on steep inclines.</p>
+        
+        <div class="quote"><strong>Regulation states:</strong> "When ascending or descending grades in excess of 10 percent, loaded trucks shall be driven with the load upgrade."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Add a specific clause in section 5.3.1 regarding ramp/grade operation, specifying that the load must point upgrade on inclines greater than 10%.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(n)(7)(ii)</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>FORK-005: The mast shall be tilted backward to stabilize the load; forward tilt is prohibited when elevated except to pick up or deposit a load.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-high">HIGH</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure does not contain instructions regarding the proper use of mast tilt for load stabilization during travel or the prohibition of forward tilt while elevated.</p>
+        
+        <div class="quote"><strong>Regulation states:</strong> "the mast shall be carefully tilted backward to stabilize the load... An elevated load shall not be tilted forward except when the load is in a deposit position over a rack or stack."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Insert instructions in section 5.3.1 regarding mast tilt: tilt back for travel stabilization and restrict forward tilt to deposit/pickup only.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(o)(6), OSHA 29 CFR 1910.178(p)</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>PIT-003: Fuel tanks shall not be filled while the engine is running.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-high">HIGH</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure lacks specific instructions regarding refueling safety, specifically the requirement to shut off engines during the process.</p>
+        
+        <div class="quote"><strong>Regulation states:</strong> "Fuel tanks shall not be filled while the engine is running. Spillage shall be avoided."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Add a section under 5.0 regarding refueling protocols, explicitly stating that engines must be turned off and spillage avoided.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(p)(2)</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>PIT-007: Flooring of trucks, trailers, and railroad cars must be checked for breaks and weakness before driving onto them.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-high">HIGH</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure correctly identifies the need for wheel blocks but misses the mandatory inspection of the trailer/car floor integrity before entry.</p>
+        <div class="quote"><strong>Procedure states:</strong> "Brakes shall be set and wheel blocks shall be in place to prevent movement of trucks, trailers or railroad cars while loading or unloading."</div>
+        <div class="quote"><strong>Regulation states:</strong> "The flooring of trucks, trailers, and railroad cars shall be checked for breaks and weakness before they are driven onto."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Update section 5.3.1.12 to include a requirement to inspect the flooring of trailers and railcars for structural integrity before driving a forklift onto them.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(m)(7)</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>FORK-014: A load chart must be displayed if rated load varies with reach.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-high">HIGH</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure covers Telehandlers (Variable Reach Forklifts) in Section 5.3.2 but fails to mandate the presence of a load chart in the cab, which is critical for these types of lifts.</p>
+        
+        <div class="quote"><strong>Regulation states:</strong> "A load chart shall be displayed in the operator's cab where the rated load varies with the reach of the equipment."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Add a requirement to Section 5.3.2 that a legible load chart must be displayed in the operator's cab for all variable reach equipment.</div>
+        <div class="reg-refs">📖 CSA B335 Section 259(2)</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>FORK-007: Operators must know where they can access operating manuals.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-medium">MEDIUM</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure requires operators to be familiar with the manual but does not explicitly mandate that the manual be accessible on the equipment or in a known location, which is a CSA requirement.</p>
+        <div class="quote"><strong>Procedure states:</strong> "4.4.7 Reading and being familiar with the manual for the equipment being operated..."</div>
+        <div class="quote"><strong>Regulation states:</strong> "Operating manual- operators must know where they can access operating manuals."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Add a requirement that the manufacturer's operating manual must be maintained on the equipment (e.g., in the weather-resistant compartment) at all times.</div>
+        <div class="reg-refs">📖 CSA B335 Section 6.4, CSA B335 Section 6</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>FORK-011: Avoid running over loose objects on the roadway surface.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-medium">MEDIUM</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure lacks a specific instruction regarding the avoidance of debris or loose objects, which can cause load shifts or tire damage.</p>
+        
+        <div class="quote"><strong>Regulation states:</strong> "Running over loose objects on the roadway surface shall be avoided."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Add a clause to the traveling section (5.3.1) regarding the avoidance of loose objects and debris on the path of travel.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(n)(14)</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>PIT-004: Trucks must maintain a safe distance of approximately three truck lengths from the truck ahead.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-medium">MEDIUM</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>While the procedure mentions obeying traffic rules, it fails to specify the mandatory 'three truck lengths' following distance required by OSHA.</p>
+        <div class="quote"><strong>Procedure states:</strong> "Obeying all traffic rules including speed limits, signals and warning signs"</div>
+        <div class="quote"><strong>Regulation states:</strong> "A safe distance shall be maintained approximately three truck lengths from the truck ahead, and the truck shall be kept under control at all times."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Update section 5.3.1 to include the specific three-truck-length following distance requirement.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(n)(1)</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>PIT-005: Operators must look in the direction of travel and keep a clear view of the path.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-medium">MEDIUM</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure does not explicitly state the requirement for the operator to look in the direction of travel, which is a critical safety behavior.</p>
+        <div class="quote"><strong>Procedure states:</strong> "The backup alarm should sound at all times when the unit is in reverse."</div>
+        <div class="quote"><strong>Regulation states:</strong> "The driver shall be required to look in the direction of, and keep a clear view of the path of travel."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Add language to section 5.3.1 requiring operators to maintain a clear view and look in the direction of travel at all times.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(n)(6)</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>PIT-009: Only stable or safely arranged loads shall be handled; caution for off-center loads.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-medium">MEDIUM</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure addresses weight capacity but does not explicitly mention load stability or the specific caution required for off-center loads.</p>
+        <div class="quote"><strong>Procedure states:</strong> "Operators shall not load forklifts in excess of their rated load or capacity."</div>
+        <div class="quote"><strong>Regulation states:</strong> "Only stable or safely arranged loads shall be handled. Caution shall be exercised when handling off-center loads which cannot be centered."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Add a requirement to section 5.3.1.16 regarding load stability and the handling of off-center loads.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(o)(1)</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>PIT-010: The mast shall be carefully tilted backward to stabilize the load.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-medium">MEDIUM</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure lacks the specific instruction to tilt the mast backward to stabilize the load during transport.</p>
+        
+        <div class="quote"><strong>Regulation states:</strong> "A load engaging means shall be placed under the load as far as possible; the mast shall be carefully tilted backward to stabilize the load."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Add a requirement to the 'Safe Operation' section stating that the mast must be tilted back sufficiently to stabilize the load before moving.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(o)(5)</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>PIT-012: A load chart shall be displayed in the operator's cab where the rated load varies with reach.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-medium">MEDIUM</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>While the procedure tells the operator to 'know' the weight and angle, it does not explicitly mandate that the load chart be physically displayed/available in the cab as required by CSA B335.</p>
+        <div class="quote"><strong>Procedure states:</strong> "Know the weight of the load and the boom angle and length at the location furthest from the Telehandler/Extendable Boom Forklift before you pick up the load."</div>
+        <div class="quote"><strong>Regulation states:</strong> "A load chart shall be displayed in the operator's cab where the rated load varies with the reach of the equipment."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Add a requirement to section 5.3.2 (Telehandlers) ensuring that a legible load chart is present in the cab at all times.</div>
+        <div class="reg-refs">📖 CSA Standard B335, Clause 31</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>PIT-013: Operators must not pass other trucks at intersections or blind spots.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-medium">MEDIUM</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure lacks a prohibition on passing other vehicles at dangerous locations.</p>
+        
+        <div class="quote"><strong>Regulation states:</strong> "Other trucks traveling in the same direction at intersections, blind spots, or other dangerous locations shall not be passed."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Add a rule in Section 5.3.1 prohibiting passing at intersections, blind spots, or other dangerous locations.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(n)(3)</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>FORK-013: Yield right of way to emergency vehicles.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-medium">MEDIUM</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure mentions obeying traffic rules but does not explicitly state the requirement to yield to emergency vehicles.</p>
+        
+        <div class="quote"><strong>Regulation states:</strong> "The right of way shall be yielded to ambulances, fire trucks, or other vehicles in emergency situations."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Add a specific requirement to Section 5.3.1.6 regarding yielding right of way to emergency vehicles.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(n)(2)</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>PIT-011: Trucks equipped with attachments shall be operated as partially loaded trucks when not handling a load.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-low">LOW</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure mentions attachments but does not include the operational requirement to treat the truck as partially loaded when the attachment is empty (which affects center of gravity and stopping distance).</p>
+        <div class="quote"><strong>Procedure states:</strong> "Only fork attachments designed for hoisting purposes may be utilized if approved by manufacturer."</div>
+        <div class="quote"><strong>Regulation states:</strong> "Trucks equipped with attachments shall be operated as partially loaded trucks when not handling a load."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Add a note in section 5.3.1 regarding the handling characteristics of trucks with attachments.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(o)(4)</div>
+    </div>
+</div>
+
+
+<div class="finding status-fail">
+    <div class="finding-header">
+        <h3>PIT-014: Railroad tracks shall be crossed diagonally wherever possible.</h3>
+        <div class="badges">
+            <span class="badge badge-fail">FAIL</span>
+            <span class="badge badge-low">LOW</span>
+            <span class="badge">Missing Section</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure does not provide guidance on the safe method for crossing railroad tracks.</p>
+        
+        <div class="quote"><strong>Regulation states:</strong> "Railroad tracks shall be crossed diagonally wherever possible."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Add an instruction to cross railroad tracks diagonally to Section 5.3.1.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(n)(6)</div>
+    </div>
+</div>
+
+
+<div class="finding status-partial">
+    <div class="finding-header">
+        <h3>FORK-004: Maintain a safe distance of approximately three truck lengths from the truck ahead.</h3>
+        <div class="badges">
+            <span class="badge badge-partial">PARTIAL</span>
+            <span class="badge badge-medium">MEDIUM</span>
+            <span class="badge">Vague Language</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>While the procedure mentions maintaining a safe distance from edges, it does not specify the 'three truck lengths' rule for following other vehicles as required by OSHA.</p>
+        <div class="quote"><strong>Procedure states:</strong> "5.3.1.11 A safe distance shall be maintained from the edge of ramps or platforms..."</div>
+        <div class="quote"><strong>Regulation states:</strong> "A safe distance shall be maintained approximately three truck lengths from the truck ahead, and the truck shall be kept under control at all times."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Update section 5.3.1 to include the specific requirement to maintain three truck lengths of distance between moving industrial trucks.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(n)(1)</div>
+    </div>
+</div>
+
+
+<div class="finding status-partial">
+    <div class="finding-header">
+        <h3>PIT-006: Loaded trucks must be driven with the load upgrade on grades in excess of 10 percent.</h3>
+        <div class="badges">
+            <span class="badge badge-partial">PARTIAL</span>
+            <span class="badge badge-medium">MEDIUM</span>
+            <span class="badge">Vague Language</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure mentions inclines for chocking purposes but fails to provide the specific operational requirement for driving with the load upgrade on steep grades.</p>
+        <div class="quote"><strong>Procedure states:</strong> "if the Telehandler/Extendable Boom Forklift is on an incline, chock the wheels."</div>
+        <div class="quote"><strong>Regulation states:</strong> "When ascending or descending grades in excess of 10 percent, loaded trucks shall be driven with the load upgrade."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Include specific instructions for operating on grades, specifying that loads must be kept upgrade on inclines exceeding 10%.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(n)(7)(i)</div>
+    </div>
+</div>
+
+
+<div class="finding status-partial">
+    <div class="finding-header">
+        <h3>FORK-010: Cross railroad tracks diagonally wherever possible.</h3>
+        <div class="badges">
+            <span class="badge badge-partial">PARTIAL</span>
+            <span class="badge badge-low">LOW</span>
+            <span class="badge">Vague Language</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure relies on a general statement to follow traffic regulations but does not explicitly state the requirement for diagonal crossing of tracks, which is a specific OSHA safety maneuver.</p>
+        <div class="quote"><strong>Procedure states:</strong> "5.3.2.17 Observe all applicable traffic regulations."</div>
+        <div class="quote"><strong>Regulation states:</strong> "Railroad tracks shall be crossed diagonally wherever possible."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> Explicitly include the requirement to cross railroad tracks diagonally in the 'Traveling' or 'Safe Operation' sections.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(n)(6)</div>
+    </div>
+</div>
+
+
+<div class="finding status-pass">
+    <div class="finding-header">
+        <h3>FORK-001: Operator training and evaluation must be conducted by persons with the knowledge, training, and experience to evaluate competence.</h3>
+        <div class="badges">
+            <span class="badge badge-pass">PASS</span>
+            <span class="badge badge-info">INFO</span>
+            <span class="badge">Incomplete Reference</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure's definition of a Competent Trainer aligns exactly with the OSHA requirement for trainer qualifications.</p>
+        <div class="quote"><strong>Procedure states:</strong> "3.2 Competent Trainer- A person who has the knowledge, training, and experience to train Powered Industrial Truck, Scissor Lift and Aerial Lift operators and evaluate competency."</div>
+        <div class="quote"><strong>Regulation states:</strong> "All operator training and evaluation shall be conducted by persons who have the knowledge, training, and experience to train powered industrial truck operators and evaluate their competence."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> None required.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(l)(2)(iii)</div>
+    </div>
+</div>
+
+
+<div class="finding status-pass">
+    <div class="finding-header">
+        <h3>FORK-002: Operator performance must be evaluated at least once every three years.</h3>
+        <div class="badges">
+            <span class="badge badge-pass">PASS</span>
+            <span class="badge badge-info">INFO</span>
+            <span class="badge">Incomplete Reference</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure correctly identifies the three-year interval for recertification/evaluation as required by both OSHA and CSA standards.</p>
+        <div class="quote"><strong>Procedure states:</strong> "3.3 Recertification... This occurs every 3 years at a minimum."</div>
+        <div class="quote"><strong>Regulation states:</strong> "An evaluation of each powered industrial truck operator's performance shall be conducted at least once every three years."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> None required.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(l)(5), CSA B335 Part 4</div>
+    </div>
+</div>
+
+
+<div class="finding status-pass">
+    <div class="finding-header">
+        <h3>FORK-006: Brakes must be set and wheel blocks in place for trucks/trailers/railcars during loading/unloading.</h3>
+        <div class="badges">
+            <span class="badge badge-pass">PASS</span>
+            <span class="badge badge-info">INFO</span>
+            <span class="badge">Incomplete Reference</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure is fully compliant with the requirement to secure transport vehicles during loading operations.</p>
+        <div class="quote"><strong>Procedure states:</strong> "5.3.1.12 Brakes shall be set and wheel blocks shall be in place to prevent movement of trucks, trailers or railroad cars while loading or unloading."</div>
+        <div class="quote"><strong>Regulation states:</strong> "The brakes of highway trucks shall be set and wheel chocks placed under the rear wheels to prevent the trucks from rolling while they are boarded with powered industrial trucks."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> None required.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(m)(7), OSHA 29 CFR 1910.178(k)(1)</div>
+    </div>
+</div>
+
+
+<div class="finding status-pass">
+    <div class="finding-header">
+        <h3>FORK-008: Refresher training is required if an operator is involved in an accident or near miss.</h3>
+        <div class="badges">
+            <span class="badge badge-pass">PASS</span>
+            <span class="badge badge-info">INFO</span>
+            <span class="badge">Incomplete Reference</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure correctly incorporates the OSHA triggers for refresher training following incidents.</p>
+        <div class="quote"><strong>Procedure states:</strong> "6.1.2.2.2 The operator has been involved in an accident or near miss incident."</div>
+        <div class="quote"><strong>Regulation states:</strong> "Refresher training... shall be provided to the operator when: The operator has been involved in an accident or near-miss incident."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> None required.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(l)(4)(ii)(B)</div>
+    </div>
+</div>
+
+
+<div class="finding status-pass">
+    <div class="finding-header">
+        <h3>FORK-012: Only loads within the rated capacity of the truck shall be handled.</h3>
+        <div class="badges">
+            <span class="badge badge-pass">PASS</span>
+            <span class="badge badge-info">INFO</span>
+            <span class="badge">Incomplete Reference</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure is in full compliance with the capacity requirements of the OSHA standard.</p>
+        <div class="quote"><strong>Procedure states:</strong> "5.3.1.16 Operators shall not load forklifts in excess of their rated load or capacity."</div>
+        <div class="quote"><strong>Regulation states:</strong> "Only loads within the rated capacity of the truck shall be handled."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> None required.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(o)(2)</div>
+    </div>
+</div>
+
+
+<div class="finding status-pass">
+    <div class="finding-header">
+        <h3>PIT-001: Operator performance evaluation must be conducted at least once every three years.</h3>
+        <div class="badges">
+            <span class="badge badge-pass">PASS</span>
+            <span class="badge badge-info">INFO</span>
+            <span class="badge">Incomplete Reference</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure correctly identifies the 3-year interval for operator performance evaluation.</p>
+        <div class="quote"><strong>Procedure states:</strong> "Recertification – a Competent Trainer utilizing a checklist or assessment form, shall observe the employee operating the equipment... This occurs every 3 years at a minimum."</div>
+        <div class="quote"><strong>Regulation states:</strong> "An evaluation of each powered industrial truck operator's performance shall be conducted at least once every three years."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> None required.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(l)(4)(iii)</div>
+    </div>
+</div>
+
+
+<div class="finding status-pass">
+    <div class="finding-header">
+        <h3>PIT-002: Defective or unsafe trucks must be removed from service until restored to safe condition.</h3>
+        <div class="badges">
+            <span class="badge badge-pass">PASS</span>
+            <span class="badge badge-info">INFO</span>
+            <span class="badge">Incomplete Reference</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure aligns with OSHA requirements for removing unsafe equipment from service.</p>
+        <div class="quote"><strong>Procedure states:</strong> "All Mobile Equipment found in an unsafe condition shall be immediately removed from service and shall be tagged “Do Not Operate”."</div>
+        <div class="quote"><strong>Regulation states:</strong> "If at any time a powered industrial truck is found to be in need of repair, defective, or in any way unsafe, the truck shall be taken out of service until it has been restored to safe operating condition."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> None required.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(p)(1)</div>
+    </div>
+</div>
+
+
+<div class="finding status-pass">
+    <div class="finding-header">
+        <h3>PIT-008: Training must be conducted by persons with the knowledge, training, and experience to evaluate competence.</h3>
+        <div class="badges">
+            <span class="badge badge-pass">PASS</span>
+            <span class="badge badge-info">INFO</span>
+            <span class="badge">Incomplete Reference</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The definition of 'Competent Trainer' in the procedure matches the OSHA requirement for trainer qualifications.</p>
+        <div class="quote"><strong>Procedure states:</strong> "Competent Trainer- A person who has the knowledge, training, and experience to train Powered Industrial Truck, Scissor Lift and Aerial Lift operators and evaluate competency."</div>
+        <div class="quote"><strong>Regulation states:</strong> "All operator training and evaluation shall be conducted by persons who have the knowledge, training, and experience to train powered industrial truck operators and evaluate their competence."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> None required.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(l)(2)(iii)</div>
+    </div>
+</div>
+
+
+<div class="finding status-pass">
+    <div class="finding-header">
+        <h3>PIT-015: Only loads within the rated capacity shall be handled.</h3>
+        <div class="badges">
+            <span class="badge badge-pass">PASS</span>
+            <span class="badge badge-info">INFO</span>
+            <span class="badge">Incomplete Reference</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure correctly prohibits overloading equipment.</p>
+        <div class="quote"><strong>Procedure states:</strong> "Operators shall not load forklifts in excess of their rated load or capacity."</div>
+        <div class="quote"><strong>Regulation states:</strong> "Only loads within the rated capacity of the truck shall be handled."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> None required.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(o)(2)</div>
+    </div>
+</div>
+
+
+<div class="finding status-pass">
+    <div class="finding-header">
+        <h3>FORK-015: Remove unsafe trucks from service until repaired.</h3>
+        <div class="badges">
+            <span class="badge badge-pass">PASS</span>
+            <span class="badge badge-info">INFO</span>
+            <span class="badge">Incomplete Reference</span>
+        </div>
+    </div>
+    <div class="finding-body">
+        <p>The procedure's lockout/tagout and removal from service requirements are compliant.</p>
+        <div class="quote"><strong>Procedure states:</strong> "All Mobile Equipment found in an unsafe condition shall be immediately removed from service and shall be tagged “Do Not Operate”."</div>
+        <div class="quote"><strong>Regulation states:</strong> "If at any time a powered industrial truck is found to be in need of repair, defective, or in any way unsafe, the truck shall be taken out of service until it has been restored to safe operating condition."</div>
+        <div class="recommendation"><strong>Recommendation:</strong> None required.</div>
+        <div class="reg-refs">📖 OSHA 29 CFR 1910.178(p)(1)</div>
+    </div>
+</div>
+
+    </div>
+
+    <footer>
+        AI-Driven Compliance Checking System &middot;
+        Generated 2026-03-18 01:24:58
+    </footer>
+</div>
+</body>
+</html>
