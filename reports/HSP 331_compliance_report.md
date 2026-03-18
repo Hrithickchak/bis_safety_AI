@@ -2,8 +2,8 @@
 
 **Procedure:** Hsp 331  
 **Source:** `data/procedures/HSP 331.pdf`  
-**Generated:** March 18, 2026 at 01:29 AM  
-**Report ID:** `RPT-654EF14C`
+**Generated:** March 18, 2026 at 02:02 AM  
+**Report ID:** `RPT-1D13313F`
 
 ## 📋 Standards Checked
 
@@ -43,21 +43,21 @@
 
 ## 📝 Executive Summary
 
-**Executive Summary: Safety Compliance Audit for Procedure Hsp 331**
+**Executive Summary: Safety Compliance Audit – Procedure Hsp 331**
 
-This report details the findings of a comprehensive safety compliance audit of Procedure Hsp 331, evaluated against OSHA 29 CFR 1910.178, ANSI/ITSDF B56.1, CSA B335, and related fall protection and fire safety standards. The procedure achieved an overall compliance score of 40.0%, with 11 passing items, 17 failures, and 2 partial matches. While the document establishes a baseline for administrative training, it currently lacks critical operational safeguards required to meet federal and international safety mandates.
+This executive summary details the findings of a comprehensive safety compliance audit of Procedure Hsp 331, evaluated against OSHA (29 CFR 1910 and 1926), ANSI/ITSDF, CSA, and NFPA standards. The procedure achieved an overall compliance score of 40.0%, with 11 items passing, 17 items failing, and 2 items receiving a partial compliance rating. While the procedure establishes a baseline for operator qualifications, it currently lacks critical operational safeguards required to meet federal and international safety mandates.
 
-The most significant gaps identified involve high-risk operational maneuvers and environmental health. Most critical is the failure to mandate atmospheric monitoring or reference OSHA permissible exposure limits (PEL) for carbon monoxide when operating indoors (PIT-010). Furthermore, the procedure fails to instruct operators on the essential requirement to keep loads upgrade when traversing inclines exceeding 10% (PIT-003) and neglects the requirement for load charts to be physically displayed in the cabs of variable-reach equipment (PIT-013). These omissions represent significant liability and increase the risk of tip-overs, respiratory illness, and structural accidents, such as driving onto weakened trailer floors—a check that is also currently missing from the protocol (PIT-007).
+The most significant gaps identified are classified as High or Critical severity, primarily concerning atmospheric safety and mechanical stability. Most notably, the procedure fails to reference OSHA 1910.1000 carbon monoxide (CO) limits or require atmospheric monitoring for indoor operations, posing a critical respiratory and life-safety risk. Furthermore, the procedure lacks specific instructions for high-risk maneuvers, such as the requirement to keep loads upgrade on inclines exceeding 10% and the mandatory inspection of trailer/railcar flooring before entry. The absence of a requirement for physical load charts in variable-reach equipment cabs also presents a high risk of vehicle instability and tip-overs due to overloading.
 
-Despite these gaps, Procedure Hsp 331 demonstrates a strong foundation in administrative and basic safety requirements. The procedure is fully compliant regarding trainer qualifications, correctly identifying that evaluators must possess the specific knowledge and experience to judge operator competence. It also successfully mandates the three-year recertification interval, the use of seatbelts, and the requirement for wheel blocks and brakes when loading or unloading trailers. These passing elements indicate that the organization has a solid framework for training management, even if the specific operational content requires expansion.
+Despite these gaps, Procedure Hsp 331 demonstrates a strong foundation in administrative and training requirements. The procedure is fully compliant regarding the qualifications of "Competent Trainers," the three-year recertification interval, and the triggers for refresher training following an accident or near-miss. Additionally, the procedure successfully mandates the use of seatbelts and the securing of transport vehicles (brakes and wheel blocks) during loading and unloading operations, aligning with current industry best practices.
 
-To bring Hsp 331 into full compliance, the following actions are recommended in order of priority:
-1.  **Immediate Revision of Environmental Controls:** Update Section 5.3.1.13 to include specific OSHA 1910.1000 thresholds for carbon monoxide and a requirement for atmospheric verification in enclosed spaces.
-2.  **Operational Safety Updates:** Amend Section 5.3.1 to include the "load upgrade" rule for steep grades, the "three truck lengths" following distance, and the requirement to tilt the mast back for load stabilization.
-3.  **Equipment Inspection Requirements:** Update pre-use and loading checklists to include mandatory inspections of trailer/railcar floor integrity and the verification of legible load charts in the operator’s cab.
-4.  **Traffic Control Refinement:** Explicitly state the requirement to yield to emergency vehicles and prohibit passing at intersections or blind spots.
+To bring Procedure Hsp 331 into full compliance, the following actions are recommended in order of priority:
+1.  **Immediate Revision (Atmospheric Safety):** Update Section 5.3.1.13 to include specific CO exposure limits and a requirement for atmospheric verification during indoor PIT operations.
+2.  **Operational Safety Updates:** Amend Section 5.3.1 to include the "load upgrade" rule for steep grades, the "three truck lengths" following distance, and the prohibition of passing at intersections.
+3.  **Structural Inspections:** Integrate a mandatory pre-entry inspection of trailer and railcar floors into the operator’s daily workflow.
+4.  **Equipment Standards:** Mandate that legible load charts be physically displayed in the operator’s cab for all applicable equipment.
 
-In its current state, the risk posture of Procedure Hsp 331 is high. While the training frequency and trainer qualifications meet regulatory expectations, the lack of specific instructions regarding load stability on grades and indoor air quality leaves the organization vulnerable to both catastrophic workplace accidents and significant regulatory citations. Implementing the prioritized recommendations above will bridge these gaps and align the facility with current ANSI and OSHA safety standards.
+In its current state, Procedure Hsp 331 represents a significant regulatory and operational risk posture. A 40% compliance score indicates that while the administrative framework for training is functional, the technical instructions for safe operation are insufficient to prevent serious injury or equipment damage. Implementing the recommended technical revisions is essential to mitigate these risks and ensure the safety of personnel and the integrity of the facility.
 
 ---
 
@@ -644,4 +644,4 @@ The procedure's lockout/tagout and removal from service requirements are complia
 
 ---
 
-*Report generated by AI-Driven Compliance Checking System on 2026-03-18 01:29:48*
+*Report generated by AI-Driven Compliance Checking System on 2026-03-18 02:02:20*
