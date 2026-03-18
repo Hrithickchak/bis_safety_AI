@@ -18,6 +18,13 @@ echo 'GOOGLE_API_KEY=your-key-here' > .env
 
 ## Usage
 
+Occupational Safety and Health Administration (OSHA)
+
+
+source venv/bin/activate                             
+
+python main.py pipeline "data/procedures/HSP 331.pdf"
+
 **Run the full pipeline** (ingest regulations → audit procedure → generate reports):
 
 ```bash
