@@ -1,9 +1,3 @@
-"""
-Pydantic models for structured compliance checking output.
-
-Defines the data schemas for compliance findings, reports, and
-intermediate data structures used throughout the pipeline.
-"""
 
 from __future__ import annotations
 

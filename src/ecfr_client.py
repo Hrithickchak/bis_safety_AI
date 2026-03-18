@@ -1,13 +1,4 @@
 """
-eCFR API Client – fetch live regulation texts from the Electronic Code
-of Federal Regulations.
-
-The eCFR website (https://www.ecfr.gov) provides a public API that allows
-retrieval of current and historical versions of the Code of Federal
-Regulations.  This module wraps the key endpoints we need:
-
-- Full-text retrieval of a CFR section (e.g. 29 CFR 1910.178)
-- Search within a title/part for keywords
 
 See: https://www.ecfr.gov/developers/documentation/api/v1
 """

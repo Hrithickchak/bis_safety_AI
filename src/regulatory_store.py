@@ -1,10 +1,6 @@
 """
 Regulatory Store – vector database for regulatory texts with RAG retrieval.
 
-Loads regulation documents, splits them into chunks, embeds them using
-Google Gemini embeddings, and stores them in a FAISS vector store.
-Provides semantic search to retrieve the most relevant regulatory clauses
-for a given query or procedure excerpt.
 """
 
 from __future__ import annotations
@@ -21,8 +17,7 @@ from config import get_settings
 
 logger = logging.getLogger(__name__)
 
-# Free-tier Gemini embedding limit: 100 requests/min.
-# We batch documents and pause between batches to stay under.
+
 _EMBED_BATCH_SIZE = 20
 _EMBED_BATCH_DELAY = 4.0  # seconds between batches
 

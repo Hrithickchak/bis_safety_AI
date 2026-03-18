@@ -1,9 +1,6 @@
 """
 Standards Mapper – map safety procedure topics to regulatory standards.
 
-Uses a combination of:
-1. A keyword-based lookup table (loaded from JSON)
-2. LLM classification as a fallback for ambiguous documents
 """
 
 from __future__ import annotations

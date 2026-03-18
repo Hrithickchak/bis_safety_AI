@@ -1,10 +1,6 @@
 """
 Report Generator – produce structured compliance reports in JSON and HTML.
 
-Takes a ComplianceReport object and renders it into:
-- JSON (machine-readable, for dashboards / downstream tools)
-- HTML (human-readable, styled report for safety managers)
-- Console (rich terminal output for CLI)
 """
 
 from __future__ import annotations

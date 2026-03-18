@@ -1,13 +1,4 @@
-"""
-Compliance Auditor – LLM-based agent that compares safety procedures
-against regulatory requirements and produces structured findings.
 
-Uses Google Gemini as the LLM backbone with a multi-step approach:
-1. Receive procedure text + relevant regulatory clauses from RAG
-2. Systematically check each regulatory requirement against the procedure
-3. Output structured ComplianceFinding objects with citations
-4. Generate an LLM-powered executive summary with prioritised action items
-"""
 
 from __future__ import annotations
 

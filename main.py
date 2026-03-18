@@ -6,21 +6,6 @@ Usage:
     python main.py audit <procedure_file> [options]
     python main.py ingest [options]
     python main.py list-standards
-
-Examples:
-    # Ingest regulations into the vector store
-    python main.py ingest --regulations-dir data/regulations
-
-    # Run a compliance audit on a forklift procedure
-    python main.py audit data/procedures/forklift_safety_procedure.txt
-
-    # Run audit with custom output formats
-    python main.py audit data/procedures/forklift_safety_procedure.txt \\
-        --output-json reports/report.json \\
-        --output-html reports/report.html
-
-    # List all known standards mappings
-    python main.py list-standards
 """
 
 from __future__ import annotations
